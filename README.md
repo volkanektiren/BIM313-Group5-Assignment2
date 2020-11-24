@@ -24,4 +24,4 @@ Note : For convenience, you can draw an ellipse instead of a circle.
 Your program should be similar to below layout. Selecting "Circle" or "Rectangle" will follow different paths.
 
 # Assignment Screens
-https://mergen.anadolu.edu.tr/courses/25252/files/1190635/preview
+![Image of Screens](https://mergen.anadolu.edu.tr/courses/25252/files/1190635/preview)
