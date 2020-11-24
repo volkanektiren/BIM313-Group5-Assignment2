@@ -17,11 +17,6 @@ namespace Plotter
             InitializeComponent();
         }
 
-        private void redirect_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void shapeMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (var label in Controls.OfType<Label>()) label.Hide();
@@ -30,18 +25,46 @@ namespace Plotter
             switch (shapeMenu.SelectedItem)
             {
                 case "Circle":
-                    textboxRadius.Visible = true;
-                    labelR.Visible = true;
+                    textboxRadius.Show();
+                    labelR.Show();
                     break;
                 case "Rectangle":
-                    textboxEdge1.Visible = true;
-                    labelEdge1.Visible = true;
-                    textboxEdge2.Visible = true;
-                    labelEdge2.Visible = true;
+                    textboxEdge1.Show();
+                    labelEdge1.Show();
+                    textboxEdge2.Show();
+                    labelEdge2.Show();
                     break;
                 default:
                     break;
             }
+        }
+
+        private void redirect_Click(object sender, EventArgs e)
+        {
+            switch (shapeMenu.SelectedItem)
+            {
+                case "Circle":
+                    CircleForm circleFormDialog = new CircleForm(textboxRadius.Text);
+                    circleFormDialog.ShowDialog();
+                    break;
+                case "Rectangle":
+                    RectangleForm rectangleFormDialog = new RectangleForm(textboxEdge1.Text, textboxEdge2.Text);
+                    rectangleFormDialog.ShowDialog();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void textbox_Length_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var senderTextBox = sender as TextBox;
+
+            if ((char.IsNumber(e.KeyChar)) || e.KeyChar == (char)Keys.Back)
+            {
+                if (e.KeyChar == '0' && senderTextBox.Text == "") e.Handled = true;
+            }
+            else e.Handled = true;
         }
     }
 }

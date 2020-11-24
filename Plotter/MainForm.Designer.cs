@@ -61,8 +61,8 @@ namespace Plotter
             this.shapeMenu.Size = new System.Drawing.Size(121, 24);
             this.shapeMenu.TabIndex = 1;
             this.shapeMenu.TabStop = false;
-            this.shapeMenu.SelectedIndexChanged += new System.EventHandler(this.shapeMenu_SelectedIndexChanged);
             this.shapeMenu.Text = "Select";
+            this.shapeMenu.SelectedIndexChanged += new System.EventHandler(this.shapeMenu_SelectedIndexChanged);
             // 
             // textboxEdge1
             // 
@@ -71,6 +71,7 @@ namespace Plotter
             this.textboxEdge1.Size = new System.Drawing.Size(100, 22);
             this.textboxEdge1.TabIndex = 2;
             this.textboxEdge1.Visible = false;
+            this.textboxEdge1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Length_KeyPress);
             // 
             // labelEdge1
             // 
@@ -99,6 +100,7 @@ namespace Plotter
             this.textboxEdge2.Size = new System.Drawing.Size(100, 22);
             this.textboxEdge2.TabIndex = 4;
             this.textboxEdge2.Visible = false;
+            this.textboxEdge2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Length_KeyPress);
             // 
             // labelR
             // 
@@ -117,6 +119,7 @@ namespace Plotter
             this.textboxRadius.Size = new System.Drawing.Size(100, 22);
             this.textboxRadius.TabIndex = 6;
             this.textboxRadius.Visible = false;
+            this.textboxRadius.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_Length_KeyPress);
             // 
             // MainForm
             // 
@@ -131,6 +134,7 @@ namespace Plotter
             this.Controls.Add(this.textboxEdge1);
             this.Controls.Add(this.shapeMenu);
             this.Controls.Add(this.redirect);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.Text = "MAINFORM";
             this.ResumeLayout(false);
