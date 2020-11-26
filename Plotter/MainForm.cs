@@ -44,11 +44,14 @@ namespace Plotter
             switch (shapeMenu.SelectedItem)
             {
                 case "Circle":
-                    CircleForm circleFormDialog = new CircleForm(textboxRadius.Text);
+                    CircleForm circleFormDialog = new CircleForm();
+                    CircleForm.radius = Convert.ToInt32(textboxRadius.Text);
                     circleFormDialog.ShowDialog();
                     break;
                 case "Rectangle":
-                    RectangleForm rectangleFormDialog = new RectangleForm(textboxEdge1.Text, textboxEdge2.Text);
+                    RectangleForm rectangleFormDialog = new RectangleForm();
+                    RectangleForm.edge1 = Convert.ToInt32(textboxEdge1.Text);
+                    RectangleForm.edge2 = Convert.ToInt32(textboxEdge2.Text);
                     rectangleFormDialog.ShowDialog();
                     break;
                 default:

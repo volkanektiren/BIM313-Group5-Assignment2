@@ -6,21 +6,11 @@ using System.Threading.Tasks;
 
 namespace Plotter
 {
-    class Shape : IShape
+    class Shape
     {
-        public double CalculateArea()
-        {
-            throw new NotImplementedException();
-        }
-
-        public double CalculatePerimeter()
-        {
-            throw new NotImplementedException();
-        }
-
         public string Print(double area, double perimeter)
         {
-            return "Perimeter : " + area + " Area : " + perimeter;
+            return "Perimeter : " + perimeter + " Area : " + area;
         }
     }
 }
